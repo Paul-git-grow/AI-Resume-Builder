@@ -333,6 +333,23 @@ function Dashboard() {
   <span>Check ATS Score →</span>
 </div>
 
+<div
+  className="action-card"
+  onClick={() => navigate("/job-matcher")}
+>
+  <div className="action-icon purple">
+    🎯
+  </div>
+
+  <h3>Job Match Analyzer</h3>
+
+  <p>
+    Compare your resume with a job description
+    and find matched and missing skills.
+  </p>
+
+  <span>Analyze Job Match →</span>
+</div>
           </div>
 
         </section>
