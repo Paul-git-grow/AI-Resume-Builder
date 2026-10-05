@@ -55,7 +55,7 @@ function AIAssistance() {
       const resumeContext = getResumeContext();
 
       const response = await fetch(
-        "http://localhost:5000/api/ai/generate",
+        `${import.meta.env.VITE_API_URL}/api/ai/generate`,
         {
           method: "POST",
           headers: {

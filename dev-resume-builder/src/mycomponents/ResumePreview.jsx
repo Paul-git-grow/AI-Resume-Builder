@@ -75,8 +75,8 @@ function ResumePreview() {
       };
 
       const url = isEditing
-        ? `http://localhost:5000/api/resumes/${editingResumeId}`
-        : "http://localhost:5000/api/resumes";
+        ? `${import.meta.env.VITE_API_URL}/api/resumes/${editingResumeId}`
+        : `${import.meta.env.VITE_API_URL}/api/resumes`;
 
       const method = isEditing ? "PUT" : "POST";
 
@@ -147,7 +147,7 @@ function ResumePreview() {
 
     if (editingResumeId) {
       const response = await fetch(
-        `http://localhost:5000/api/resumes/${editingResumeId}/download`,
+        `${import.meta.env.VITE_API_URL}/api/resumes/${editingResumeId}/download`,
         {
           method: "PUT",
           headers: {

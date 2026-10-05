@@ -30,7 +30,7 @@ function Profile() {
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/profile",
+          `${import.meta.env.VITE_API_URL}/api/profile`,
           {
             method: "GET",
             headers: {
@@ -105,7 +105,7 @@ function Profile() {
       setSaving(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/profile",
+        `${import.meta.env.VITE_API_URL}/api/profile`,
         {
           method: "PUT",
           headers: {

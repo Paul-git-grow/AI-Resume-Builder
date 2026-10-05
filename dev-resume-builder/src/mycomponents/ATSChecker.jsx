@@ -25,7 +25,7 @@ function ATSChecker() {
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/resumes",
+          `${import.meta.env.VITE_API_URL}/api/resumes`,
           {
             method: "GET",
             headers: {
