@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./JobMatcher.css";
+import "./Jobmatcher.css";
 
 function JobMatcher() {
   const navigate = useNavigate();
