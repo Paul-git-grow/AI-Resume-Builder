@@ -145,7 +145,6 @@ function AIAssistance() {
       localStorage.setItem("AISummary", finalResult);
 
       setApplied(true);
-      alert("Professional summary added to resume!");
       return;
     }
 
@@ -167,7 +166,6 @@ function AIAssistance() {
       );
 
       setApplied(true);
-      alert("AI suggested skills added to resume!");
       return;
     }
 
@@ -181,7 +179,6 @@ function AIAssistance() {
       );
 
       setApplied(true);
-      alert("Improved project description added to resume!");
       return;
     }
 
@@ -195,7 +192,6 @@ function AIAssistance() {
       );
 
       setApplied(true);
-      alert("Improved experience added to resume!");
       return;
     }
 
@@ -209,7 +205,6 @@ function AIAssistance() {
       );
 
       setApplied(true);
-      alert("Improved certifications added to resume!");
       return;
     }
 
@@ -223,7 +218,6 @@ function AIAssistance() {
       );
 
       setApplied(true);
-      alert("Improved achievements added to resume!");
       return;
     }
 
@@ -323,21 +317,13 @@ function AIAssistance() {
   return (
     <div className="ai-page">
       <nav className="ai-navbar">
-        <div
-          className="ai-logo"
-          onClick={() => navigate("/dashboard")}
-        >
+        <div className="ai-logo" onClick={() => navigate("/dashboard")}>
           <span>AI</span> Resume
         </div>
 
         <div className="ai-step"> Step 4 of 6 </div>
 
-        <button
-          className="ai-exit"
-          onClick={handleSaveAndExit}
-        >
-          Save & Exit
-        </button>
+        <button className="ai-exit" onClick={handleSaveAndExit}> Save & Exit </button>
       </nav>
 
       <div className="ai-progress-container">

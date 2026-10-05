@@ -54,8 +54,6 @@ const handleSubmit = async (e) => {
     // Logged-in user id store
     localStorage.setItem("loggedInUserId", data.user.id);
 
-    alert("Login successful");
-
     navigate("/dashboard");
 
   } catch (error) {

@@ -60,8 +60,6 @@ function ResumeDetails() {
 
     localStorage.setItem("ResumeData",JSON.stringify(Resumex));
 
-    alert("Resume details saved!");
-
     navigate("/AiAssistance");
   };
 

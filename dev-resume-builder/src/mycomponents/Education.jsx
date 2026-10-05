@@ -43,8 +43,6 @@ const [educationData, setEducationData] = useState({
 
     localStorage.setItem("educationData",JSON.stringify(educationData));
 
-    alert("Education details saved!");
-
     navigate("/ResumeDetails");
   };
 

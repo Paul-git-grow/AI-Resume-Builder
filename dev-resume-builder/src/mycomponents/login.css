@@ -306,16 +306,66 @@
 
 @media (max-width: 500px) {
 
+  .login-page {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
   .login-right {
-    padding: 18px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px;
+    align-items: center;
+    justify-content: center;
   }
 
   .login-card {
-    padding: 28px 22px;
+    width: 100%;
+    max-width: 400px;
+    padding: 28px 20px;
+    margin: 0 auto;
+    border-radius: 14px;
+  }
+
+  .login-heading {
+    margin-bottom: 25px;
   }
 
   .login-heading h2 {
     font-size: 24px;
   }
 
+  .login-heading p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .login-card input {
+    width: 100%;
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .password-label {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .forgot-btn {
+    white-space: nowrap;
+  }
+
+  .login-submit {
+    width: 100%;
+    height: 47px;
+  }
+
+  .signup-text {
+    line-height: 1.6;
+  }
+
+  .back-home {
+    margin-top: 18px;
+  }
 }
