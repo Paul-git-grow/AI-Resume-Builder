@@ -911,7 +911,10 @@
 
 /* ================= PRINT ================= */
 
+/* ================= PRINT ================= */
+
 @media print {
+
   @page {
     size: A4 portrait;
     margin: 0;
@@ -919,11 +922,16 @@
 
   html,
   body {
-    width: 210mm;
-    height: 297mm;
+    width: 210mm !important;
+    height: auto !important;
+    min-height: 0 !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     background: #ffffff !important;
+
+    overflow: hidden !important;
   }
 
   body {
@@ -931,53 +939,98 @@
     print-color-adjust: exact !important;
   }
 
+  /* Hide preview controls */
+
   .preview-navbar,
   .preview-toolbar {
     display: none !important;
   }
 
+  /* Main print page */
+
   .preview-page {
     width: 210mm !important;
-    min-height: 297mm !important;
+    height: auto !important;
+    min-height: 0 !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     background: #ffffff !important;
+
+    overflow: hidden !important;
   }
 
   .preview-main {
     width: 210mm !important;
-    max-width: none !important;
+    max-width: 210mm !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
     margin: 0 !important;
     padding: 0 !important;
   }
 
+  /* Remove mobile preview wrapper behaviour */
 
   .resume-wrapper {
-  width: 100%;
-  min-height: 545px;
-  padding: 10px;
-  border-radius: 10px;
-  overflow: hidden;
+    width: 210mm !important;
 
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
+    height: auto !important;
+    min-height: 0 !important;
 
-.resume-paper {
-  width: 794px;
-  min-width: 794px;
-  min-height: 1123px;
-  flex-shrink: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 
-  transform: scale(0.46);
-  transform-origin: top center;
-}
+    display: block !important;
+
+    background: #ffffff !important;
+
+    border-radius: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+  /* Exact A4 Resume */
+
+  .resume-paper {
+    width: 210mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+
+    margin: 0 !important;
+
+    /* IMPORTANT: remove mobile scale while printing */
+    transform: none !important;
+    transform-origin: initial !important;
+
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    overflow: hidden !important;
+
+    page-break-before: auto !important;
+    page-break-after: auto !important;
+    page-break-inside: avoid !important;
+
+    break-before: auto !important;
+    break-after: auto !important;
+    break-inside: avoid !important;
+  }
+
+  /* Avoid sections splitting */
 
   .resume-section {
-    break-inside: avoid !important;
     page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
+
+  /* Keep template colours in PDF */
 
   .modern-header,
   .modern-sidebar,
@@ -989,41 +1042,44 @@
     print-color-adjust: exact !important;
   }
 
-  /* Keep Professional and Executive inside one A4 page */
-.resume-paper.professional {
-  padding: 42px 58px !important;
-}
+  /* Professional template */
 
-.professional-content .resume-section {
-  margin-top: 18px !important;
-}
+  .resume-paper.professional {
+    padding: 42px 58px !important;
+  }
 
-.resume-paper.executive {
-  padding: 0 58px 35px !important;
-}
+  .professional-content .resume-section {
+    margin-top: 18px !important;
+  }
 
-.executive-header {
-  padding: 34px 0 18px !important;
-}
+  /* Executive template */
 
-.executive-content .resume-section {
-  margin-top: 18px !important;
-}
+  .resume-paper.executive {
+    padding: 0 58px 35px !important;
+  }
 
-.resume-paper.professional .resume-section h2,
-.resume-paper.executive .resume-section h2 {
-  margin-bottom: 7px !important;
-}
+  .executive-header {
+    padding: 34px 0 18px !important;
+  }
 
-.resume-paper.professional .summary-text,
-.resume-paper.professional .project-content,
-.resume-paper.executive .summary-text,
-.resume-paper.executive .project-content {
-  line-height: 1.5 !important;
-}
+  .executive-content .resume-section {
+    margin-top: 18px !important;
+  }
 
-.resume-paper.professional .skills-list,
-.resume-paper.executive .skills-list {
-  gap: 5px !important;
-}
+  .resume-paper.professional .resume-section h2,
+  .resume-paper.executive .resume-section h2 {
+    margin-bottom: 7px !important;
+  }
+
+  .resume-paper.professional .summary-text,
+  .resume-paper.professional .project-content,
+  .resume-paper.executive .summary-text,
+  .resume-paper.executive .project-content {
+    line-height: 1.5 !important;
+  }
+
+  .resume-paper.professional .skills-list,
+  .resume-paper.executive .skills-list {
+    gap: 5px !important;
+  }
 }
