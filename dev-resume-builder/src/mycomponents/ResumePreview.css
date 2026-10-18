@@ -827,7 +827,7 @@
 
   .preview-navbar {
     height: auto;
-    min-height: 70px;
+    min-height: 100px;
     padding: 10px 14px;
     gap: 10px;
   }
