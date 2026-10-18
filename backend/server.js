@@ -19,8 +19,19 @@ const PORT = process.env.PORT || 5000;
 // =========================
 // MIDDLEWARE - CORS
 // =========================
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ai-powerresume.netlify.app",
+];
 
-app.use(cors());
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json());
 
 // =========================
